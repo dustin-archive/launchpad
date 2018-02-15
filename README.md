@@ -32,9 +32,3 @@ make
 ```
 make build
 ```
-
-## Deployment
-
-This project uses Netlify to automatically deploy to production when commits are pushed to master.
-
-[View the Netlify dashboard for this project.](https://app.netlify.com/sites/truckdough/overview)
