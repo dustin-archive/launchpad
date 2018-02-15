@@ -1,5 +1,5 @@
 
-# <img src='favicon.png' width='48'> @whaaaley/launchpad
+# <img src=favicon.png height=24> @whaaaley/launchpad
 
 > Boilerplate for building web applications.
 
