@@ -6,7 +6,7 @@
 ## Install
 
 ```
-npm i
+sh install.sh
 ```
 
 ## Env file
