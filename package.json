@@ -17,13 +17,6 @@
   },
   "devDependencies": {
   },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-es2015"
-      ]
-    ]
-  },
   "standard": {
     "globals": [
       "NODE_ENV"

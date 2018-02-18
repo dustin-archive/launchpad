@@ -13,7 +13,7 @@ preview: fresh
 	dev-server dist --watch 'src/**/*' 'make build'
 
 build: fresh
-	babel dist/app.js | uglifyjs -o dist/app.js -c -m --source-map "url='app.js.map',content='dist/app.js.map'" &
+	babel dist/app.js --presets=@babel/preset-es2015 | uglifyjs -o dist/app.js -c -m --source-map "url='app.js.map',content='dist/app.js.map'" &
 	postcss dist/app.css -o dist/app.css -u autoprefixer -m
 	cleancss dist/app.css -o dist/app.css --source-map --source-map-inline-sources
 

@@ -1,8 +1,15 @@
-#!/bin/sh
+#!/usr/bin/sh
 
+# Create Folders and Directories
+mkdir assets
+mkdir dist
+cp .env-example .env
+
+# Install Dependencies
 npm i \
   hyperapp
 
+# Install DevDependencies
 npm i -D  \
   @babel/cli \
   @babel/core \
@@ -16,3 +23,6 @@ npm i -D  \
   rollup-plugin-node-resolve \
   rollup-plugin-replace \
   uglify-js
+
+# Cleanup Install
+rm install.sh
