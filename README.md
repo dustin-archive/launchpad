@@ -9,10 +9,6 @@
 sh install.sh
 ```
 
-## Env file
-
-Duplicate `.env-example` and rename it to `.env`.
-
 ## Scripts
 
 Ensure you have GNU make version 3.8.2 or above.
@@ -32,3 +28,9 @@ make
 ```
 make build
 ```
+
+## Deployment
+
+This project uses <service> to deploy when commits are pushed to master.
+
+[View the <service> dashboard for this project.](https://<service>)
