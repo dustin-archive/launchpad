@@ -31,6 +31,6 @@ make build
 
 ## Deployment
 
-This project uses <service> to deploy when commits are pushed to master.
+This project uses `foobar` to deploy when commits are pushed to master.
 
-[View the <service> dashboard for this project.](https://<service>)
+[View the `foobar` dashboard for this project.](http://foobar.com)
