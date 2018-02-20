@@ -85,8 +85,16 @@ button {
 // # Helpers
 // =============================================================================
 
-._code {
+._debug {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  padding: 12px 24px;
+  border-radius: 4px;
   white-space: pre;
+  background: $white;
+  box-shadow: $shadow-top-1;
+  z-index: 1;
 }
 
 ._material-icons {
