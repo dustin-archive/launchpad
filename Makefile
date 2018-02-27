@@ -20,7 +20,6 @@ start: build
 build: prep js css
 
 prep:
-	env $$(cat .env)
 	rm -rf dist
 	mkdir dist
 	cp favicon.png dist &
@@ -31,7 +30,7 @@ prep:
 	cp -r images dist
 
 js:
-	rollup src/app.js -o dist/app.js -f iife -m -c
+	env $$(cat .env) rollup src/app.js -o dist/app.js -f iife -m -c
 
 css:
 	node-sass src/app.scss -o dist --source-map true --source-map-contents
