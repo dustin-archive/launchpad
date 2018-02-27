@@ -3,10 +3,10 @@
 
 > Boilerplate for building web applications.
 
-## Install
+## Install and Setup
 
 ```
-sh install.sh
+make setup
 ```
 
 ## Scripts
@@ -20,7 +20,7 @@ Ensure you have GNU make version 3.8.2 or above.
 Start a development server at [`http://localhost:3000/`](http://localhost:3000/) and watch for changes.
 
 ```
-make
+make start
 ```
 
 ### Build for production
@@ -31,6 +31,6 @@ make build
 
 ## Deployment
 
-This project uses `foobar` to deploy when commits are pushed to master.
+This project uses `foo` to deploy when commits are pushed to master.
 
-[View the `foobar` dashboard for this project.](http://foobar.com)
+[View the `foo` dashboard for this project.](http://foo.com)
