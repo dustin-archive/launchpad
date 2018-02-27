@@ -6,33 +6,49 @@ SHELL := /bin/bash
 .ONESHELL:
 .SILENT:
 
-start: fresh
-	dev-server dist --watch 'src/**/*.js' 'make js' --watch 'src/**/*.scss' 'make css'
-
-preview: fresh
-	dev-server dist --watch 'src/**/*' 'make build'
-
-build: fresh
+all: build
 	babel dist/app.js --presets=@babel/preset-es2015 | uglifyjs -o dist/app.js -c -m --source-map "url='app.js.map',content='dist/app.js.map'" &
 	postcss dist/app.css -o dist/app.css -u autoprefixer -m
 	cleancss dist/app.css -o dist/app.css --source-map --source-map-inline-sources
 
-fresh: clean move js css
+demo: build
+	dev-server dist --watch 'src/**/*' 'make'
 
-clean:
+start: build
+	dev-server dist --watch 'src/**/*.js' 'make js' --watch 'src/**/*.scss' 'make css'
+
+build: prep js css
+
+prep:
 	rm -rf dist
 	mkdir dist
-
-move:
-	cp favicon.png dist &
-	cp index.html dist &
-	cp sitemap.xml dist &
-	cp -r assets dist &
-	cp -r fonts dist &
+	cp -r assets dist
+	cp -r fonts dist
 	cp -r images dist
+	cp favicon.png dist
+	cp index.html dist
+	cp sitemap.xml dist
 
 js:
 	env $$(cat .env) rollup src/app.js -o dist/app.js -f iife -m -c
 
 css:
 	node-sass src/app.scss -o dist --source-map true --source-map-contents
+
+setup:
+	mkdir assets
+	cp .env-example .env
+	npm i hyperapp
+	npm i -D  \
+	  @babel/cli \
+	  @babel/core \
+	  @babel/preset-es2015 \
+	  @jamen/dev-server \
+	  autoprefixer \
+	  clean-css-cli \
+	  node-sass \
+	  postcss-cli \
+	  rollup \
+	  rollup-plugin-node-resolve \
+	  rollup-plugin-replace \
+	  uglify-js
