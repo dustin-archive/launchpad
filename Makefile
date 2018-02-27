@@ -37,7 +37,6 @@ css:
 
 setup:
 	mkdir assets
-	mkdir dist
 	cp .env-example .env
 	npm i hyperapp
 	npm i -D  \
