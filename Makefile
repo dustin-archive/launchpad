@@ -22,7 +22,6 @@ build: prep js css
 prep:
 	rm -rf dist
 	mkdir dist
-	cp -r assets dist
 	cp -r fonts dist
 	cp -r images dist
 	cp favicon.png dist
@@ -36,7 +35,6 @@ css:
 	node-sass src/app.scss -o dist --source-map true --source-map-contents
 
 setup:
-	mkdir assets
 	cp .env-example .env
 	npm i hyperapp
 	npm i -D  \
