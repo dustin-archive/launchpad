@@ -3,6 +3,8 @@
 
 > Boilerplate for building web applications.
 
+![screenshot](screenshot.png)
+
 ## Install and Setup
 
 ```
@@ -33,6 +35,6 @@ make
 
 ## Deployment
 
-This project uses `foo` to deploy when commits are pushed to master.
+This project uses Netlify to deploy when commits are pushed to master.
 
-[View the `foo` dashboard for this project.](http://foo.com)
+[View the Netlify dashboard for this project.](https://app.netlify.com/sites/launchpad-demo)
