@@ -37,7 +37,7 @@ css:
 setup:
 	cp .env-example .env
 	npm i hyperapp
-	npm i -D  \
+	npm i -D \
 	  @babel/cli \
 	  @babel/core \
 	  @babel/preset-es2015 \
