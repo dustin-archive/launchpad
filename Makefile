@@ -22,11 +22,7 @@ build: prep js css
 prep:
 	rm -rf dist
 	mkdir dist
-	cp -r fonts dist &
-	cp -r images dist &
-	cp favicon.png dist &
-	cp index.html dist &
-	cp sitemap.xml dist &
+	cp -r fonts images favicon.png index.html sitemap.xml dist &
 
 js:
 	env $$(cat .env) rollup src/app.js -o dist/app.js -f iife -m -c
