@@ -22,10 +22,10 @@ build: prep js css
 prep:
 	rm -rf dist
 	mkdir dist
-	cp -r fonts dist
-	cp -r images dist
-	cp favicon.png dist
-	cp index.html dist
+	cp -r fonts dist &
+	cp -r images dist &
+	cp favicon.png dist &
+	cp index.html dist &
 	cp sitemap.xml dist
 
 js:
