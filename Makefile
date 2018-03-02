@@ -11,7 +11,7 @@ all: build
 	postcss dist/app.css -o dist/app.css -u autoprefixer -m
 	cleancss dist/app.css -o dist/app.css --source-map --source-map-inline-sources
 
-demo: build
+demo: build all
 	dev-server dist --watch 'src/**/*' 'make'
 
 start: build
