@@ -7,7 +7,7 @@ const state = {}
 
 const actions = {}
 
-const view = (...args) =>
+const view = s =>
   h('div', { class: 'app' }, [
     h('img', { src: 'images/hyperapp.png' })
   ])
