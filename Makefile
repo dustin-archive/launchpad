@@ -1,28 +1,30 @@
-# GNU Make 3.8.2 or above
 
-PATH := $(PATH):node_modules/.bin
+PATH := node_modules/.bin:$(PATH)
 SHELL := /bin/bash
 
-.ONESHELL:
 .SILENT:
 
-all: build
-	babel dist/app.js --presets=@babel/preset-es2015 | uglifyjs -o dist/app.js -c pure_funcs=['Object.defineProperty'] -m --source-map "url='app.js.map',content='dist/app.js.map'" &
-	postcss dist/app.css -o dist/app.css -u autoprefixer -m
-	cleancss dist/app.css -o dist/app.css --source-map --source-map-inline-sources
+all: prep js css minify html
 
-demo: build all
+demo: all
 	dev-server dist --watch 'src/**/*' 'make'
 
-start: build
-	dev-server dist --watch 'src/**/*.js' 'make js' --watch 'src/**/*.scss' 'make css'
+start: prep js css html
+	dev-server dist --watch 'src/**/*.js' 'make js' --watch 'src/**/*.scss' 'make css html'
 
-build: prep js css
+minify:
+	node scripts/babel
+	uglifyjs dist/app.js -o dist/app.js -c pure_funcs=['Object.defineProperty'] -m --source-map content='dist/app.js.map',url='app.js.map'
+	postcss dist/app.css -o dist/app.css -u autoprefixer -m
+	cleancss dist/app.css -o dist/app.css --source-map --source-map-inline-sources
 
 prep:
 	rm -rf dist
 	mkdir dist
-	cp -r fonts images favicon.png index.html sitemap.xml dist &
+	cp -r fonts images favicon.png sitemap.xml dist
+
+html:
+	rollup index.js -f cjs -e 'fs' -c | node > dist/index.html
 
 js:
 	env $$(cat .env) rollup src/app.js -o dist/app.js -f iife -m -c
@@ -32,11 +34,23 @@ css:
 
 setup:
 	cp .env-example .env
-	npm i hyperapp
+	npm i \
+		@whaaaley/query-string \
+		classcat \
+		hyperapp
 	npm i -D \
-		@babel/cli \
 		@babel/core \
-		@babel/preset-es2015 \
+		@babel/plugin-transform-arrow-functions \
+		@babel/plugin-transform-block-scoped-functions \
+		@babel/plugin-transform-block-scoping \
+		@babel/plugin-transform-computed-properties \
+		@babel/plugin-transform-destructuring \
+		@babel/plugin-transform-function-name \
+		@babel/plugin-transform-parameters \
+		@babel/plugin-transform-shorthand-properties \
+		@babel/plugin-transform-spread \
+		@babel/plugin-transform-template-literals \
+		@hyperapp/render \
 		@jamen/dev-server \
 		autoprefixer \
 		clean-css-cli \

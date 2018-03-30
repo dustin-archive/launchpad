@@ -15,8 +15,6 @@ make setup
 
 ## Scripts
 
-Ensure you have GNU make version 3.8.2 or above.
-
 [See `Makefile` for details.](Makefile)
 
 ### Start development

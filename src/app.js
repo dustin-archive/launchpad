@@ -1,15 +1,10 @@
 
 'use strict'
 
-import { h, app } from 'hyperapp'
+import { app } from 'hyperapp'
+import { state, actions } from './args'
+import App from './views/App'
 
-const state = {}
+const view = s => App
 
-const actions = {}
-
-const view = s =>
-  h('div', { class: 'app' }, [
-    h('img', { src: 'images/hyperapp.png' })
-  ])
-
-app(state, actions, view, document.body)
+app(state, actions, view, document.getElementById('app'))
