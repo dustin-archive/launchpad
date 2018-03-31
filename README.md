@@ -3,7 +3,7 @@
   <img src=images/hyperapp-graphic-jp.png alt=hyperapp>
 </p>
 
-# <img src=favicon.png height=24> @whaaaley/launchpad
+# <img src=favicon.png alt=favicon height=24> @whaaaley/launchpad
 
 > Boilerplate for building web applications. | https://launchpad-demo.netlify.com/
 
