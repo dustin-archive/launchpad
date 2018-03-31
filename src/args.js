@@ -1,6 +1,32 @@
 
-const state = {}
+import Router from './stores/Router'
 
-const actions = {}
+const getState = d => state => state
+const update = data => data
+
+const state = {
+  // custom state
+  // ...
+
+  // launchpad state
+  Images: {},
+  Router: {}
+}
+
+const actions = {
+  // custom actions
+  // ...
+
+  // launchpad actions
+  Images: {
+    update
+  },
+  Reroute: {
+    update
+  },
+  Router,
+  getState,
+  update
+}
 
 export { state, actions }
