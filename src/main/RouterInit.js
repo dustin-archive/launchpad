@@ -1,8 +1,6 @@
 
-import Listings from './Listings'
 import NotFound from './NotFound'
 import Reroute from './Reroute'
-import Welcome from './Welcome'
 
 const RouterInit = main => {
   // init Router
@@ -13,9 +11,7 @@ const RouterInit = main => {
 
   // map paths to callbacks
   const routes = {
-    '': Listings,
-    '/reroute': Reroute,
-    '/welcome': Welcome
+    '/reroute': Reroute
   }
 
   // call callback

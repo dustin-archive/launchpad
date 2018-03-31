@@ -25,6 +25,8 @@ const actions = {
     update
   },
   Router,
+
+  // launchpad top-level actions
   getState,
   update
 }

@@ -119,6 +119,12 @@ button {
 // ...
 
 //
+// # Launchpad Imports
+// =============================================================================
+
+@import 'styles/spinner';
+
+//
 // # Launchpad Styles
 // =============================================================================
 
@@ -129,7 +135,7 @@ button {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
-  animation: 0.5s forwards launchpad-graphic;
+  animation: 0.5s forwards launchpad;
 }
 
 .app {
@@ -137,7 +143,7 @@ button {
   height: 100vh;
 }
 
-@keyframes launchpad-graphic {
+@keyframes launchpad {
   100% {
     opacity: 1;
   }
