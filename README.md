@@ -1,11 +1,11 @@
 
+<p align=center>
+  <img src=images/hyperapp-graphic-jp.png alt=hyperapp>
+</p>
+
 # <img src=favicon.png height=24> @whaaaley/launchpad
 
-> Boilerplate for building web applications.
-
-[**View Demo**](https://launchpad-demo.netlify.com/)
-
-![screenshot](screenshot.png)
+> Boilerplate for building web applications. | https://launchpad-demo.netlify.com/
 
 ## Install and Setup
 
