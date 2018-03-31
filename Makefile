@@ -6,25 +6,22 @@ SHELL := /bin/bash
 
 all: prep js css minify html
 
-demo: all
+demo: production all
 	dev-server dist --watch 'src/**/*' 'make'
 
-start: prep js css html
-	dev-server dist --watch 'src/**/*.js' 'make js' --watch 'src/**/*.scss' 'make css html'
+start: development prep js css html
+	dev-server dist --watch 'src/**/*.js' 'make js' --watch 'src/**/*.scss' 'make css'
 
-minify:
-	node scripts/babel
-	uglifyjs dist/app.js -o dist/app.js -c pure_funcs=['Object.defineProperty'] -m --source-map content='dist/app.js.map',url='app.js.map'
-	postcss dist/app.css -o dist/app.css -u autoprefixer -m
-	cleancss dist/app.css -o dist/app.css --source-map --source-map-inline-sources
+development:
+	cp .env-development .env
+
+production:
+	cp .env-production .env
 
 prep:
 	rm -rf dist
 	mkdir dist
 	cp -r fonts images favicon.png sitemap.xml dist
-
-html:
-	rollup index.js -f cjs -e 'fs' -c | node > dist/index.html
 
 js:
 	env $$(cat .env) rollup src/app.js -o dist/app.js -f iife -m -c
@@ -32,8 +29,16 @@ js:
 css:
 	node-sass src/app.scss -o dist --source-map true --source-map-contents
 
+minify:
+	node scripts/babel
+	uglifyjs dist/app.js -o dist/app.js -c pure_funcs=['Object.defineProperty'] -m --source-map content='dist/app.js.map',url='app.js.map'
+	postcss dist/app.css -o dist/app.css -u autoprefixer -m
+	cleancss dist/app.css -o dist/app.css --source-map --source-map-inline-sources
+
+html:
+	env $$(cat .env) rollup index.js -f cjs -e 'fs' -c | node > dist/index.html
+
 setup:
-	cp .env-example .env
 	npm i \
 		@whaaaley/query-string \
 		classcat \
