@@ -1,6 +1,6 @@
 
 <p align=center>
-  <img src=images/hyperapp-graphic-jp.png alt=hyperapp>
+  <img src=images/hyperapp-graphic-jp.png alt=hyperapp height=360>
 </p>
 
 # <img src=favicon.png alt=favicon height=24> @whaaaley/launchpad
