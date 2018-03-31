@@ -44,6 +44,9 @@ $yellow: rgb(223, 159, 31);
 $green: rgb(127, 191, 63);
 $blue: rgb(31, 159, 223);
 
+$hyperapp: rgb(0, 178, 255);
+$quiver: rgb(127, 207, 207);
+
 $dark-1: rgb(31, 33, 35);
 $dark-2: rgb(23, 25, 27);
 $dark-3: rgb(15, 17, 19);
@@ -80,7 +83,7 @@ svg, table {
 }
 
 body {
-  font: 400 1em/1 '-apple-system', BlinkMacSystemFont, sans-serif;
+  font: 400 1em/1 Roboto, '-apple-system', BlinkMacSystemFont, sans-serif;
   background: $background-light;
   box-sizing: border-box;
   -webkit-font-smoothing: subpixel-antialiased; // 2
@@ -118,5 +121,6 @@ button {
 }
 
 img {
+  width: 240px;
   margin: auto;
 }
