@@ -2,7 +2,7 @@
   "name": "@whaaaley/launchpad",
   "version": "0.0.0",
   "description": "Boilerplate for building web applications.",
-  "author": "Dustin Dowell <dustindowell2@gmail.com",
+  "author": "Dustin Dowell <dustindowell2@gmail.com>",
   "license": "MIT",
   "main": "src/app.js",
   "repository": {
