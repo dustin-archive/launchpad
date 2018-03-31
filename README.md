@@ -5,7 +5,7 @@
 
 # <img src=favicon.png alt=favicon height=24> @whaaaley/launchpad
 
-> Boilerplate for building web applications. | https://launchpad-demo.netlify.com/
+> Boilerplate for building web applications. https://launchpad-demo.netlify.com/
 
 ## Install and Setup
 
