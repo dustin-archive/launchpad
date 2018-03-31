@@ -27,8 +27,6 @@ make start
 
 ### Build for production
 
-Set `NODE_ENV='production'` in your `.env` file.
-
 ```
 make
 ```
