@@ -1,0 +1,16 @@
+
+.dummy-text {
+  position: absolute;
+  top: 0 - ((288px - 48px) / 2);
+  width: 100%;
+  color: $blue;
+  font-size: 48px * 6;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.dummy {
+  margin: auto;
+  font-size: 48px;
+  font-weight: 900;
+}

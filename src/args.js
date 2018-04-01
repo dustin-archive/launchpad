@@ -1,5 +1,6 @@
 
 import Router from './stores/Router'
+import RouterPage from './stores/RouterPage'
 
 const getState = d => state => state
 const update = data => data
@@ -11,6 +12,7 @@ const state = {
   // launchpad state
   Images: {},
   Router: {},
+  RouterPage: {},
   Stash: {}
 }
 
@@ -26,6 +28,7 @@ const actions = {
     update
   },
   Router,
+  RouterPage,
   Stash: {
     update
   },
