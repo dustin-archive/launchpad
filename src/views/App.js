@@ -1,5 +1,7 @@
 
 import { h } from 'hyperapp'
+
+// import Bar from './Bar'
 import RouterView from './RouterView'
 
 const Pagination = d => (s, actions) =>
@@ -10,6 +12,7 @@ const Pagination = d => (s, actions) =>
 
 const App = d =>
   h('div', { class: 'app' }, [
+    // Bar,
     RouterView,
     Pagination
   ])

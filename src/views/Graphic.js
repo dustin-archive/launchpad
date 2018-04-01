@@ -14,7 +14,7 @@ const Graphic = d => (state, actions) => {
     })
     : h('div', {
       class: 'launchpad-graphic',
-      oncreate: () => {
+      onupdate: () => {
         window.fetch(`images/${image}`)
           .then(res => res.blob())
           .then(blob => {

@@ -132,6 +132,7 @@ button {
 // # Launchpad Imports
 // =============================================================================
 
+@import 'styles/bar';
 @import 'styles/dummy';
 @import 'styles/spinner';
 
@@ -143,7 +144,8 @@ button {
   display: flex;
   position: fixed;
   right: 0;
-  padding: 8px;
+  bottom: 0;
+  padding: 4px;
   font-size: 14px;
   letter-spacing: 0.0625em;
   text-transform: uppercase;
