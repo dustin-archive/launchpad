@@ -3,7 +3,7 @@ import { h } from 'hyperapp'
 
 const image = 'hyperapp-graphic-small-jp.png'
 
-const Graphic = (state, actions) => {
+const Graphic = d => (state, actions) => {
   const saved = state.Images[image]
   return saved
     ? h('div', {

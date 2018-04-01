@@ -10,7 +10,8 @@ const state = {
 
   // launchpad state
   Images: {},
-  Router: {}
+  Router: {},
+  Stash: {}
 }
 
 const actions = {
@@ -25,6 +26,9 @@ const actions = {
     update
   },
   Router,
+  Stash: {
+    update
+  },
 
   // launchpad top-level actions
   getState,

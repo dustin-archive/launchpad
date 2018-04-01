@@ -1,6 +1,5 @@
 
 import { h } from 'hyperapp'
-import App from './App'
 import Spinner from './Spinner'
 
 const production = NODE_ENV === 'production'
@@ -20,7 +19,7 @@ const Stub = data =>
         : h('link', { rel: 'stylesheet', href: 'app.css' })
     ]),
     h('body', null, [
-      h('div', { id: 'app' }, h(App, null, Spinner)),
+      h('div', { id: 'app' }, Spinner),
       production
         ? h('style', { innerHTML: data.js })
         : h('script', { src: 'app.js' })

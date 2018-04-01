@@ -6,7 +6,7 @@ import NotFound from './NotFound'
 
 // import shallowEqualArrays from '../helpers/shallowEqualArrays'
 
-const RouterView = (state, actions) => {
+const RouterView = d => (state, actions) => {
   // map paths to views
   const routes = {
     '': Graphic
