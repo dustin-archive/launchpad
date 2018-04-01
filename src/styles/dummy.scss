@@ -1,16 +1,22 @@
 
-.dummy-text {
-  position: absolute;
-  top: 0 - ((288px - 48px) / 2);
-  width: 100%;
-  color: $hyperapp;
-  font-size: 48px * 6;
-  text-align: center;
-  opacity: 0.5;
-}
-
 .dummy {
+  width: 240px - 16px;
+  height: 240px - 16px;
   margin: auto;
-  font-size: 48px;
+  border-radius: 50%;
+  font-size: 32px;
   font-weight: 900;
+  text-align: center;
+  background: $hyperapp;
+
+  &::after {
+    content: 'DUMMYROUTE';
+  }
+
+  div {
+    padding: 36px 0 6px;
+    color: $white;
+    font-size: 136px;
+    text-align: center;
+  }
 }
