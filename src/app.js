@@ -1,7 +1,7 @@
 
 'use strict'
 
-import { h, app } from 'hyperapp'
+import { app } from 'hyperapp'
 
 import { state, actions } from './args'
 
@@ -16,11 +16,10 @@ import RouterInit from './main/RouterInit'
 
 // launchpad views
 import App from './views/App'
-import RouterView from './views/RouterView'
 
 // ...
 
-const view = s => h(App, null, RouterView)
+const view = s => App
 const container = document.getElementById('app')
 
 const main = app(state, actions, view, container)
