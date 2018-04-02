@@ -21,8 +21,8 @@ const Stub = data =>
     h('body', null, [
       h('div', { id: 'app' }, Spinner),
       production
-        : h('script', { src: 'app.js' })
         ? h('script', { innerHTML: data.js })
+        : h('script', { defer: true, src: 'app.js' })
     ])
   ])
 
