@@ -1,8 +1,6 @@
 
 import { h } from 'hyperapp'
-
 import ObjectView from '@whaaaley/hyperapp-object-view'
-
 import RouterView from './RouterView'
 
 const DropDowns = d => (s, actions) =>
