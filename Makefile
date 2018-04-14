@@ -40,10 +40,10 @@ html:
 
 setup:
 	npm i \
-		@whaaaley/hyperapp-object-view
+		@whaaaley/hyperapp-object-view \
 		@whaaaley/query-string \
 		classcat \
-		hyperapp \
+		hyperapp
 	npm i -D \
 		@babel/core \
 		@babel/plugin-transform-arrow-functions \
