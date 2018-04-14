@@ -1,0 +1,52 @@
+
+.launchpad-graphic {
+  width: 100%;
+  transition: background-image 0.5s;
+  background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation: 0.5s forwards launchpad;
+}
+
+.launchpad-state-view {
+  max-width: 320px;
+  max-height: calc(100vh - 46px - 4px - 4px - 8px);
+  margin: 4px;
+  border-radius: 4px;
+  box-shadow: $shadow;
+  overflow: hidden;
+}
+
+.launchpad-button {
+  margin: 4px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  color: $white;
+  background: $hyperapp;
+
+  &:hover {
+    background: mix($hyperapp, $white, 75%);
+    cursor: pointer;
+  }
+}
+
+.launchpad-control {
+  display: flex;
+  font-size: 14px;
+  letter-spacing: 0.0625em;
+  text-transform: uppercase;
+}
+
+.launchpad {
+  position: fixed;
+  padding: 4px;
+
+  &.-right {
+    right: 0;
+  }
+
+  &.-bottom {
+    bottom: 0;
+  }
+}

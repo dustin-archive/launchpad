@@ -22,7 +22,7 @@ const Stub = data =>
       h('div', { id: 'app' }, Spinner),
       production
         ? h('style', { innerHTML: data.js })
-        : h('script', { src: 'app.js' })
+        : h('script', { defer: true, src: 'app.js' })
     ])
   ])
 
