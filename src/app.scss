@@ -1,6 +1,4 @@
 
-@charset 'UTF-8';
-
 //
 // # Fonts
 // =============================================================================
@@ -132,6 +130,8 @@ button {
 // # Launchpad Imports
 // =============================================================================
 
+@import 'node_modules/@whaaaley/hyperapp-object-view/src/objectView';
+@import 'styles/launchpad';
 @import 'styles/bar';
 @import 'styles/dummy';
 @import 'styles/spinner';
@@ -140,39 +140,7 @@ button {
 // # Launchpad Styles
 // =============================================================================
 
-.launchpad-router-page {
-  display: flex;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  padding: 4px;
-  font-size: 14px;
-  letter-spacing: 0.0625em;
-  text-transform: uppercase;
 
-  div {
-    margin: 4px;
-    padding: 12px 16px;
-    border-radius: 4px;
-    color: $white;
-    background: $hyperapp;
-
-    &:hover {
-      background: mix($hyperapp, $white, 75%);
-      cursor: pointer;
-    }
-  }
-}
-
-.launchpad-graphic {
-  width: 100%;
-  transition: background-image 0.5s;
-  background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0;
-  animation: 0.5s forwards launchpad;
-}
 
 .app {
   display: flex;

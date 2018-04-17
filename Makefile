@@ -4,13 +4,14 @@ SHELL := /bin/bash
 
 .SILENT:
 
-all: prep js css minify html
+all: prep css js minify html
+	gzip -k -n -9 dist/app.css dist/app.js
 
 demo: production all
 	dev-server dist --watch 'src/**/*' 'make'
 
-start: development prep js css html
-	dev-server dist --watch 'src/**/*.js' 'make js' --watch 'src/**/*.scss' 'make css'
+start: development prep css js html
+	dev-server dist --watch 'src/**/*.scss' 'make css' --watch 'src/**/*.js' 'make js'
 
 development:
 	cp .env-development .env
@@ -23,15 +24,14 @@ prep:
 	mkdir dist
 	cp -r fonts images favicon.png sitemap.xml dist
 
-js:
-	env $$(cat .env) rollup src/app.js -o dist/app.js -f iife -m -c
-
 css:
 	node-sass src/app.scss -o dist --source-map true --source-map-contents
 
+js:
+	env $$(cat .env) rollup src/app.js -o dist/app.js -f iife -m -c
+
 minify:
-	node scripts/babel
-	uglifyjs dist/app.js -o dist/app.js -c -m --source-map content='dist/app.js.map',url='app.js.map'
+	node scripts/babel | uglifyjs -o dist/app.js -c -m --source-map content='dist/app.js.map',url='app.js.map'
 	postcss dist/app.css -o dist/app.css -u autoprefixer -m
 	cleancss dist/app.css -o dist/app.css --source-map --source-map-inline-sources
 
@@ -40,11 +40,13 @@ html:
 
 setup:
 	npm i \
+		@whaaaley/hyperapp-object-view \
 		@whaaaley/query-string \
 		classcat \
 		hyperapp
 	npm i -D \
 		@babel/core \
+		@babel/plugin-proposal-object-rest-spread \
 		@babel/plugin-transform-arrow-functions \
 		@babel/plugin-transform-block-scoped-functions \
 		@babel/plugin-transform-block-scoping \
